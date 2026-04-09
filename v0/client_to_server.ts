@@ -1,4 +1,7 @@
+import { UUID } from "../shared.ts";
+
 export interface v0_cts_signup {
+    userUuid: UUID;
     type: "signup",
     userName: string,
     password: string,
