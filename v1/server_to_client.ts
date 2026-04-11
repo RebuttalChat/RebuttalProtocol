@@ -1,4 +1,17 @@
-import { type RoomUUID, type UserUUID, type v1_shared_groups_list, type v1_shared_message_real, type v1_shared_room, type v1_shared_user } from "./shared.ts";
+import {
+    type RoomUUID,
+    type UserUUID,
+    type v1_shared_groups_list,
+    type v1_shared_message_real,
+    type v1_shared_room,
+    type v1_shared_user
+} from "./shared.ts";
+
+export interface v1_stc_login {
+    type: "login",
+    userid: UserUUID,
+    success: boolean,
+}
 
 export interface v1_stc_update_users {
     type: "updateUsers",
@@ -71,6 +84,7 @@ export interface v1_stc_server_mute {
 }
 
 export interface v1_stc_talking {
+    userid: UserUUID,
     type: "talking",
     talking: boolean,
 }
@@ -85,7 +99,7 @@ export interface v1_stc_let_me_see {
     type: "letmesee",
     touserid: UserUUID,
     fromuserid: UserUUID,
-    messsage: unknown,
+    message: unknown,
 }
 export interface v1_stc_present_custom_window {
     type: "presentcustomwindow",
@@ -97,6 +111,7 @@ export interface v1_stc_disconnect {
     userid: UserUUID,
 }
 export type v1_stc_packet =
+    v1_stc_login |
     v1_stc_update_rooms |
     v1_stc_update_users |
     v1_stc_chatdev |

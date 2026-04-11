@@ -8,19 +8,20 @@ export function is_uuid(uuid: string): uuid is UUID {
 }
 
 export interface v1_shared_message_ephemeral {
+    url: string | null;
     text: string,
     tags: string[],
 }
 
 export interface v1_shared_message_real {
     roomid: RoomUUID;
-    idx: number;
+    idx: number | null;
     text: string;
     img: string | null;
     url: string | null;
     height: number | null;
     width: number | null;
-    userid: UserUUID;
+    userid: UserUUID | null;
     tags: string[];
     type: string | null;
     username: string;
