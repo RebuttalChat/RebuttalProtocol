@@ -151,11 +151,3 @@ export interface v1_cts_window_input {
 }
 
 export type v1_cts_packet = v1_cts_invite | v1_cts_get_messages | v1_cts_message | v1_cts_join_room | v1_cts_leave_room | v1_cts_video | v1_cts_go_live | v1_cts_let_me_see | v1_cts_create_room | v1_cts_create_user | v1_cts_update_room | v1_cts_update_user | v1_cts_remove_room | v1_cts_remove_user | v1_cts_update_message | v1_cts_remove_message | v1_cts_create_group | v1_cts_update_group | v1_cts_remove_group | v1_cts_set_user_group | v1_cts_chat_device | v1_cts_server_mute | v1_cts_talking | v1_cts_context_option | v1_cts_window_input;
-
-export function cast_v1_cts(input: unknown): v1_cts_packet | null {
-    const packet: v1_cts_packet = input as v1_cts_packet;
-    if (packet.type !== undefined) {
-        return packet;
-    }
-    return null;
-}

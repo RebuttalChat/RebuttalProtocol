@@ -22,11 +22,3 @@ export interface v0_cts_login {
 }
 
 export type v0_cts_packet = v0_cts_login | v0_cts_signup;
-
-export function cast_v0_cts(input: unknown): v0_cts_packet | null {
-    const packet: v0_cts_packet = input as v0_cts_packet;
-    if (packet.type !== undefined) {
-        return packet;
-    }
-    return null;
-}

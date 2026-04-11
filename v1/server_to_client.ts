@@ -130,11 +130,3 @@ export type v1_stc_packet =
     v1_stc_present_custom_window |
     v1_stc_disconnect;
 
-
-export function cast_v1_stc(input: unknown): v1_stc_packet | null {
-    const packet: v1_stc_packet = input as v1_stc_packet;
-    if (packet.type !== undefined) {
-        return packet;
-    }
-    return null;
-}
