@@ -47,6 +47,11 @@ export interface v1_shared_user {
     hidden: boolean;
 }
 
+/* Key is group name, internal list is collection of permissions allowed to that group */
+export interface v1_shared_groups_list {
+    [key: string]: string[];
+}
+
 // Split types to generate TS warnings about wrong UUID type without runtime overhead
 export type UserUUID = UUID;
 export type RoomUUID = UUID;
