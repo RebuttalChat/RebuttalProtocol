@@ -1,4 +1,4 @@
-import { RoomUUID, UserUUID, v1_shared_groups_list, v1_shared_message, v1_shared_room, v1_shared_user } from "./shared.ts";
+import { RoomUUID, UserUUID, v1_shared_groups_list, v1_shared_message_real, v1_shared_room, v1_shared_user } from "./shared.ts";
 
 export interface v1_stc_update_users {
     type: "updateUsers",
@@ -27,7 +27,7 @@ export interface v1_stc_update_text {
     type: "updateText",
     roomid: RoomUUID,
     segment: number,
-    messages: v1_shared_message[],
+    messages: v1_shared_message_real[],
 }
 
 export interface v1_stc_leave_room {
@@ -61,7 +61,7 @@ export interface v1_stc_invite {
 export interface v1_stc_send_message {
     type: "sendMessage",
     roomid: UserUUID,
-    message: v1_shared_message,
+    message: v1_shared_message_real,
 }
 
 export interface v1_stc_server_mute {
@@ -114,3 +114,12 @@ export type v1_stc_packet =
     v1_stc_let_me_see |
     v1_stc_present_custom_window |
     v1_stc_disconnect;
+
+
+export function cast_v1_stc(input: unknown): v1_stc_packet | null {
+    const packet: v1_stc_packet = input as v1_stc_packet;
+    if (packet.type !== undefined) {
+        return packet;
+    }
+    return null;
+}

@@ -1,4 +1,4 @@
-import { RoomUUID, UserUUID, v1_shared_group_change, v1_shared_message } from "./shared.ts";
+import { RoomUUID, UserUUID, v1_shared_context_type, v1_shared_group_change, v1_shared_message_ephemeral } from "./shared.ts";
 
 export interface v1_cts_invite {
     type: "invite",
@@ -13,10 +13,10 @@ export interface v1_cts_get_messages {
 
 export interface v1_cts_message {
     type: "message",
-    filename: string | null | undefined,
-    rawfile: string | null | undefined,
+    filename: string | null,
+    rawfile: string | null,
     roomid: RoomUUID,
-    message: v1_shared_message,
+    message: v1_shared_message_ephemeral,
 }
 
 export interface v1_cts_join_room {
@@ -26,7 +26,6 @@ export interface v1_cts_join_room {
 
 export interface v1_cts_leave_room {
     type: "leaveroom",
-    roomid: RoomUUID
 }
 
 export interface v1_cts_video {
@@ -44,7 +43,7 @@ export interface v1_cts_go_live {
 export interface v1_cts_let_me_see {
     type: "letmesee",
     touserid: UserUUID,
-    message: string,
+    message: boolean,
 }
 
 export interface v1_cts_create_room {
@@ -87,7 +86,7 @@ export interface v1_cts_update_message {
     type: "updatemessage",
     roomid: RoomUUID,
     messageid: number,
-    message: v1_shared_message,
+    message: v1_shared_message_ephemeral,
 }
 
 export interface v1_cts_remove_message {
@@ -120,7 +119,6 @@ export interface v1_cts_set_user_group {
 
 export interface v1_cts_chat_device {
     type: "chatdev",
-    userid: UserUUID,
     video: boolean,
     audio: boolean,
 }
@@ -138,7 +136,7 @@ export interface v1_cts_talking {
 
 export interface v1_cts_context_option {
     type: "contextoption",
-    context: "user" | "room" | "voiceroom" | "textroom" | "message" | "livestream",
+    context: v1_shared_context_type,
     option: string,
     value: string,
 }

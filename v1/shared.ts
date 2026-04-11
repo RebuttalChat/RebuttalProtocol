@@ -7,9 +7,13 @@ export function is_uuid(uuid: string): uuid is UUID {
     return uuid_regex.test(uuid);
 }
 
+export interface v1_shared_message_ephemeral {
+    text: string,
+    tags: string[],
+}
 
-export interface v1_shared_message {
-    roomid: string;
+export interface v1_shared_message_real {
+    roomid: RoomUUID;
     idx: number;
     text: string;
     img?: string;
@@ -51,6 +55,8 @@ export interface v1_shared_user {
 export interface v1_shared_groups_list {
     [key: string]: string[];
 }
+
+export type v1_shared_context_type = "user" | "room" | "voiceroom" | "textroom" | "message" | "livestream";
 
 // Split types to generate TS warnings about wrong UUID type without runtime overhead
 export type UserUUID = UUID;
