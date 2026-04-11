@@ -1,4 +1,4 @@
-import { RoomUUID, UserUUID, v1_shared_groups_list, v1_shared_message_real, v1_shared_room, v1_shared_user } from "./shared.ts";
+import { type RoomUUID, type UserUUID, type v1_shared_groups_list, type v1_shared_message_real, type v1_shared_room, type v1_shared_user } from "./shared.ts";
 
 export interface v1_stc_update_users {
     type: "updateUsers",

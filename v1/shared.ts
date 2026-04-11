@@ -16,13 +16,13 @@ export interface v1_shared_message_real {
     roomid: RoomUUID;
     idx: number;
     text: string;
-    img?: string;
-    url?: string;
-    height?: number;
-    width?: number;
-    userid?: string;
+    img: string | null;
+    url: string | null;
+    height: number | null;
+    width: number | null;
+    userid: UserUUID;
     tags: string[];
-    type?: string;
+    type: string | null;
     username: string;
 }
 

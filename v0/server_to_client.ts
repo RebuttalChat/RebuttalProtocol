@@ -1,4 +1,4 @@
-import { v0_shared_context_menu_collection } from "./shared.ts";
+import { type v0_shared_context_menu_collection } from "./shared.ts";
 
 export interface v0_stc_connect_packet {
     type: "connect",
