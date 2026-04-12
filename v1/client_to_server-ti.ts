@@ -35,7 +35,7 @@ export const v1_cts_leave_room = t.iface([], {
 export const v1_cts_video = t.iface([], {
   "type": t.lit("video"),
   "touserid": "UserUUID",
-  "payload": "string",
+  "payload": "unknown",
 });
 
 export const v1_cts_go_live = t.iface([], {

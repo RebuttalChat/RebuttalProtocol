@@ -35,7 +35,7 @@ export interface v1_cts_leave_room {
 export interface v1_cts_video {
     type: "video",
     touserid: UserUUID,
-    payload: string,
+    payload: unknown,
 }
 
 export interface v1_cts_go_live {

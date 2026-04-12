@@ -51,7 +51,7 @@ export interface v1_stc_leave_room {
 
 export interface v1_stc_video {
     type: "video",
-    payload: string,
+    payload: unknown,
     touserid: UserUUID,
     fromuserid: UserUUID,
 }

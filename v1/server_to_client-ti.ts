@@ -48,7 +48,7 @@ export const v1_stc_leave_room = t.iface([], {
 
 export const v1_stc_video = t.iface([], {
   "type": t.lit("video"),
-  "payload": "string",
+  "payload": "unknown",
   "touserid": "UserUUID",
   "fromuserid": "UserUUID",
 });
