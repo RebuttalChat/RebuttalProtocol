@@ -99,7 +99,7 @@ export interface v1_stc_let_me_see {
     type: "letmesee",
     touserid: UserUUID,
     fromuserid: UserUUID,
-    message: unknown,
+    message: boolean,
 }
 export interface v1_stc_present_custom_window {
     type: "presentcustomwindow",

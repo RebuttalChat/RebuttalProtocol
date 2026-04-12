@@ -98,7 +98,7 @@ export const v1_stc_let_me_see = t.iface([], {
   "type": t.lit("letmesee"),
   "touserid": "UserUUID",
   "fromuserid": "UserUUID",
-  "message": "unknown",
+  "message": "boolean",
 });
 
 export const v1_stc_present_custom_window = t.iface([], {
