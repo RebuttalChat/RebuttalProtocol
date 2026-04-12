@@ -1,12 +1,4 @@
 
-export type UUID = string & { __uuid: void };
-
-const uuid_regex = /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/;
-
-export function is_uuid(uuid: string): uuid is UUID {
-    return uuid_regex.test(uuid);
-}
-
 export interface v1_shared_message_ephemeral {
     url: string | null;
     text: string,
@@ -27,6 +19,20 @@ export interface v1_shared_message_real {
     username: string;
 }
 
+export interface v1_shared_message_update {
+    roomid: RoomUUID,
+    idx: number,
+    text?: string,
+    img?: string,
+    url?: string,
+    width?: number,
+    height?: number,
+    userid?: UserUUID,
+    tags?: string[],
+    type?: string,
+    username?: string,
+}
+
 export interface v1_shared_group_change {
     add?: string;
     remove?: string;
@@ -41,7 +47,7 @@ export interface v1_shared_room {
 
 export interface v1_shared_user {
     id: UserUUID;
-    currentRoom: string | null;
+    currentRoom: RoomUUID | null;
     livestate: boolean;
     livelabel: string;
     name: string;
@@ -59,7 +65,6 @@ export interface v1_shared_groups_list {
 
 export type v1_shared_context_type = "user" | "room" | "voiceroom" | "textroom" | "message" | "livestream";
 
-// Split types to generate TS warnings about wrong UUID type without runtime overhead
-export type UserUUID = UUID;
-export type RoomUUID = UUID;
-export type ConnectionUUID = UUID;
+export type UserUUID = string;
+export type RoomUUID = string;
+export type ConnUUID = string;

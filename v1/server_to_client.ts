@@ -73,7 +73,7 @@ export interface v1_stc_invite {
 
 export interface v1_stc_send_message {
     type: "sendMessage",
-    roomid: UserUUID,
+    roomid: RoomUUID,
     message: v1_shared_message_real,
 }
 

@@ -1,7 +1,7 @@
 import {
     type RoomUUID, type UserUUID,
     type v1_shared_context_type, type v1_shared_group_change,
-    type v1_shared_message_ephemeral, type v1_shared_message_real
+    type v1_shared_message_ephemeral, type v1_shared_message_update
 } from "./shared.ts";
 
 export interface v1_cts_invite {
@@ -88,7 +88,7 @@ export interface v1_cts_remove_user {
 
 export interface v1_cts_update_message {
     type: "updatemessage",
-    message: v1_shared_message_real,
+    message: v1_shared_message_update,
 }
 
 export interface v1_cts_remove_message {
