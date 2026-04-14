@@ -58,6 +58,12 @@ export interface v1_shared_user {
     hidden: boolean;
 }
 
+export interface v1_shared_theme {
+    name: string;
+    description: string;
+    id: string;
+}
+
 /* Key is group name, internal list is collection of permissions allowed to that group */
 export interface v1_shared_groups_list {
     [key: string]: string[];

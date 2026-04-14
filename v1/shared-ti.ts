@@ -63,6 +63,12 @@ export const v1_shared_user = t.iface([], {
   "hidden": "boolean",
 });
 
+export const v1_shared_theme = t.iface([], {
+  "name": "string",
+  "description": "string",
+  "id": "string",
+});
+
 export const v1_shared_groups_list = t.iface([], {
   [t.indexKey]: t.array("string"),
 });
@@ -82,6 +88,7 @@ const exportedTypeSuite: t.ITypeSuite = {
   v1_shared_group_change,
   v1_shared_room,
   v1_shared_user,
+  v1_shared_theme,
   v1_shared_groups_list,
   v1_shared_context_type,
   UserUUID,
