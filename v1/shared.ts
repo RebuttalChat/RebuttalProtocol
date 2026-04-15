@@ -58,12 +58,6 @@ export interface v1_shared_user {
     hidden: boolean;
 }
 
-export interface v1_shared_theme {
-    name: string;
-    description: string;
-    id: string;
-}
-
 export interface v1_shared_context_menu {
     label: string;
     permissionRequired: string;

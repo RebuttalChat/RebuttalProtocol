@@ -63,12 +63,6 @@ export const v1_shared_user = t.iface([], {
   "hidden": "boolean",
 });
 
-export const v1_shared_theme = t.iface([], {
-  "name": "string",
-  "description": "string",
-  "id": "string",
-});
-
 export const v1_shared_context_menu = t.iface([], {
   "label": "string",
   "permissionRequired": "string",
@@ -102,7 +96,6 @@ const exportedTypeSuite: t.ITypeSuite = {
   v1_shared_group_change,
   v1_shared_room,
   v1_shared_user,
-  v1_shared_theme,
   v1_shared_context_menu,
   v1_shared_context_menu_collection,
   v1_shared_groups_list,

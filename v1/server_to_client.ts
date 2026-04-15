@@ -1,6 +1,5 @@
 import {
     type v1_shared_context_menu_collection,
-    type v1_shared_theme,
     type RoomUUID,
     type UserUUID,
     type v1_shared_groups_list,
@@ -11,7 +10,6 @@ import {
 
 export interface v1_stc_welcome {
     type: "welcome",
-    themes: v1_shared_theme[],
     contextmenus: v1_shared_context_menu_collection,
 }
 

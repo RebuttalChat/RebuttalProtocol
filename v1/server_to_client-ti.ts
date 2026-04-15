@@ -6,7 +6,6 @@ import * as t from "ts-interface-checker";
 
 export const v1_stc_welcome = t.iface([], {
   "type": t.lit("welcome"),
-  "themes": t.array("v1_shared_theme"),
   "contextmenus": "v1_shared_context_menu_collection",
 });
 
