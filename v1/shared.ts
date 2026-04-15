@@ -64,6 +64,21 @@ export interface v1_shared_theme {
     id: string;
 }
 
+export interface v1_shared_context_menu {
+    label: string;
+    permissionRequired: string;
+    option: string;
+}
+
+export interface v1_shared_context_menu_collection {
+    user: v1_shared_context_menu[];
+    room: v1_shared_context_menu[];
+    textroom: v1_shared_context_menu[];
+    voiceroom: v1_shared_context_menu[];
+    message: v1_shared_context_menu[];
+}
+
+
 /* Key is group name, internal list is collection of permissions allowed to that group */
 export interface v1_shared_groups_list {
     [key: string]: string[];

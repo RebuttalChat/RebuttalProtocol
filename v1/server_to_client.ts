@@ -1,4 +1,6 @@
 import {
+    type v1_shared_context_menu_collection,
+    type v1_shared_theme,
     type RoomUUID,
     type UserUUID,
     type v1_shared_groups_list,
@@ -6,6 +8,12 @@ import {
     type v1_shared_room,
     type v1_shared_user
 } from "./shared.ts";
+
+export interface v1_stc_welcome {
+    type: "welcome",
+    themes: v1_shared_theme[],
+    contextmenus: v1_shared_context_menu_collection,
+}
 
 export interface v1_stc_login {
     type: "login",
@@ -111,6 +119,7 @@ export interface v1_stc_disconnect {
     userid: UserUUID,
 }
 export type v1_stc_packet =
+    v1_stc_welcome |
     v1_stc_login |
     v1_stc_update_rooms |
     v1_stc_update_users |

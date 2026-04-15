@@ -4,6 +4,12 @@
 import * as t from "ts-interface-checker";
 // tslint:disable:object-literal-key-quotes
 
+export const v1_stc_welcome = t.iface([], {
+  "type": t.lit("welcome"),
+  "themes": t.array("v1_shared_theme"),
+  "contextmenus": "v1_shared_context_menu_collection",
+});
+
 export const v1_stc_login = t.iface([], {
   "type": t.lit("login"),
   "userid": "UserUUID",
@@ -111,9 +117,10 @@ export const v1_stc_disconnect = t.iface([], {
   "userid": "UserUUID",
 });
 
-export const v1_stc_packet = t.union("v1_stc_login", "v1_stc_update_rooms", "v1_stc_update_users", "v1_stc_chatdev", "v1_stc_join_room", "v1_stc_update_text", "v1_stc_leave_room", "v1_stc_video", "v1_stc_update_perms", "v1_stc_update_groups", "v1_stc_invite", "v1_stc_send_message", "v1_stc_server_mute", "v1_stc_talking", "v1_stc_go_live", "v1_stc_let_me_see", "v1_stc_present_custom_window", "v1_stc_disconnect");
+export const v1_stc_packet = t.union("v1_stc_welcome", "v1_stc_login", "v1_stc_update_rooms", "v1_stc_update_users", "v1_stc_chatdev", "v1_stc_join_room", "v1_stc_update_text", "v1_stc_leave_room", "v1_stc_video", "v1_stc_update_perms", "v1_stc_update_groups", "v1_stc_invite", "v1_stc_send_message", "v1_stc_server_mute", "v1_stc_talking", "v1_stc_go_live", "v1_stc_let_me_see", "v1_stc_present_custom_window", "v1_stc_disconnect");
 
 const exportedTypeSuite: t.ITypeSuite = {
+  v1_stc_welcome,
   v1_stc_login,
   v1_stc_update_users,
   v1_stc_update_rooms,

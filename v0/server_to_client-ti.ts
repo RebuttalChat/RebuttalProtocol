@@ -8,7 +8,6 @@ export const v0_stc_connect_packet = t.iface([], {
   "type": t.lit("connect"),
   "message": "string",
   "icon": "string",
-  "contextmenus": "v0_shared_context_menu_collection",
   "protocols": t.array("string"),
 });
 

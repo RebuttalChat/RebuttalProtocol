@@ -69,6 +69,20 @@ export const v1_shared_theme = t.iface([], {
   "id": "string",
 });
 
+export const v1_shared_context_menu = t.iface([], {
+  "label": "string",
+  "permissionRequired": "string",
+  "option": "string",
+});
+
+export const v1_shared_context_menu_collection = t.iface([], {
+  "user": t.array("v1_shared_context_menu"),
+  "room": t.array("v1_shared_context_menu"),
+  "textroom": t.array("v1_shared_context_menu"),
+  "voiceroom": t.array("v1_shared_context_menu"),
+  "message": t.array("v1_shared_context_menu"),
+});
+
 export const v1_shared_groups_list = t.iface([], {
   [t.indexKey]: t.array("string"),
 });
@@ -89,6 +103,8 @@ const exportedTypeSuite: t.ITypeSuite = {
   v1_shared_room,
   v1_shared_user,
   v1_shared_theme,
+  v1_shared_context_menu,
+  v1_shared_context_menu_collection,
   v1_shared_groups_list,
   v1_shared_context_type,
   UserUUID,
