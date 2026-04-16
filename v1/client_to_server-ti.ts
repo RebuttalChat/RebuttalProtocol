@@ -54,6 +54,7 @@ export const v1_cts_create_room = t.iface([], {
   "type": t.lit("createroom"),
   "roomType": t.union(t.lit("voice"), t.lit("text")),
   "roomName": "string",
+  "position": "number",
 });
 
 export const v1_cts_create_user = t.iface([], {

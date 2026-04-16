@@ -43,6 +43,7 @@ export interface v1_shared_room {
     type: string;
     name: string;
     userlist: v1_shared_user[];
+    position: number;
 }
 
 export interface v1_shared_user {

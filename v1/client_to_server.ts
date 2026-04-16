@@ -54,6 +54,7 @@ export interface v1_cts_create_room {
     type: "createroom",
     roomType: "voice" | "text",
     roomName: string,
+    position: number,
 }
 
 export interface v1_cts_create_user {

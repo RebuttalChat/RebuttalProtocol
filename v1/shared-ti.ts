@@ -48,6 +48,7 @@ export const v1_shared_room = t.iface([], {
   "type": "string",
   "name": "string",
   "userlist": t.array("v1_shared_user"),
+  "position": "number",
 });
 
 export const v1_shared_user = t.iface([], {
