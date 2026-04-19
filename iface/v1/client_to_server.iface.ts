@@ -2,7 +2,7 @@ import {
     type RoomUUID, type UserUUID,
     type v1_shared_context_type, type v1_shared_group_change,
     type v1_shared_message_ephemeral, type v1_shared_message_update
-} from "./shared.ts";
+} from "./shared.iface.ts";
 
 export interface v1_cts_invite {
     type: "invite",

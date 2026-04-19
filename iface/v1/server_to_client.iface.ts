@@ -6,7 +6,7 @@ import {
     type v1_shared_message_real,
     type v1_shared_room,
     type v1_shared_user
-} from "./shared.ts";
+} from "./shared.iface.ts";
 
 export interface v1_stc_welcome {
     type: "welcome",
