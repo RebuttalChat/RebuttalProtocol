@@ -1,0 +1,18 @@
+{
+    "type": "module",
+    "name": "rebuttal-protocol",
+    "version": "1.0.0",
+    "private": true,
+    "author": "trigg <triggerhapp@gmail.com>",
+    "license": "GPL-3.0-or-later",
+    "scripts": {
+        "build": "rm **/*-ti.ts; yarn ts-interface-builder **/*.iface.ts"
+    },
+    "dependencies": {
+        "ts-interface-checker": "^1.0.2"
+    },
+    "devDependencies": {
+        "nodejs": "^0.0.0",
+        "ts-interface-builder": "^0.3.3"
+    }
+}
